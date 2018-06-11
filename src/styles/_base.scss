@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500');
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: $grey-s;
+}
+.h1, h1{
+    font-weight: 500;
+    font-size: 36px
+}
+.h2, h2{
+    font-weight: 500;
+    font-size: 24px;
+}
+.subTitle{
+    font-weight: 500;
+    font-size: 20px;
+}
+.placeholder{
+    font-size: 20px;
+}
+.label{
+    font-style: italic;
+}
+.bold{
+    font-weight: bold;
+}
