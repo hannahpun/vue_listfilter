@@ -3,7 +3,7 @@
         <div class="list-img" style="background-image:url(https://amp.businessinsider.com/images/5944425a9a7af52c008b4fdb-750-563.jpg)">
         </div>
        <div class="list-content">
-           <!-- <pre>{{contents}}</pre> -->
+           <pre>{{contents}}</pre>
             <h2>{{contents.Name}}</h2>
             <p class="list-txt">{{contents.Description}}</p>
             <div class="list-tag">
