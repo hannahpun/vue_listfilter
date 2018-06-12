@@ -1,0 +1,22 @@
+.tag-category{
+    color: $white;
+    background-color: $grey-m;
+    border-radius: 100px;
+    padding: 5px 15px;
+   
+}
+
+// Input
+.input-searchWrapper{
+    color: $purple;
+}
+.input-search{
+    color: $purple;
+    font-size: 20px;
+    background-color: transparent;
+    border-width: 0;
+    border-bottom: 1px solid $purple;
+    margin-bottom: 20px;
+    margin-left: -25px;
+    padding: 5px 0 5px 30px;
+}

@@ -19,8 +19,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/styles/element-variables.scss';
-@import '@/styles/application.scss';
 .app{
   width: 1200px;
   margin: 0 auto;
@@ -39,5 +37,6 @@ export default {
 }
 #main-content{
   width: 65%;
+  padding: 25px;
 }
 </style>

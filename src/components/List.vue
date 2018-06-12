@@ -3,15 +3,16 @@
         <div class="list-img" style="background-image:url(https://amp.businessinsider.com/images/5944425a9a7af52c008b4fdb-750-563.jpg)">
         </div>
        <div class="list-content">
-            <h2>Kogi Cosby sweater.</h2>
-            <p class="list-txt">Donec euismod scelerisque ligula. Maecenas eu varius risus, eu aliquet arcu. Curabitur fermentum suscipit est, tincidunt mattis lorem luctus id. Donec eget massa a diam condimentum pretium. Aliquam erat volutpat. Integer ut tincidunt orci. Etiam tristique, elit ut consectetur iaculis, metus lectus mattis justo, vel mollis eros neque quis augue. Sed lobortis ultrices lacus, a placerat metus rutrum sit amet. Aenean ut suscipit justo.</p>
+           <!-- <pre>{{contents}}</pre> -->
+            <h2>{{contents.Name}}</h2>
+            <p class="list-txt">{{contents.Description}}</p>
             <div class="list-tag">
                 <p class="bold">Ethan Foster</p>
                 <p class="tag-category">Entertainment</p>
             </div>
             <div class="list-note">
-                <p><i class="el-icon-location"></i>Kaohsiung City</p>
-                <p><i class="el-icon-date"></i>Kaohsiung City</p>
+                <p><i class="el-icon-location"></i>{{contents.Zone}}</p>
+                <p><i class="el-icon-date"></i>{{contents.Opentime}}</p>
                 <p></p>
             </div>
        </div>
@@ -20,12 +21,12 @@
 
 <script>
 export default {
-  name: 'Lists',
   data () {
     return {
       show: true
     }
-  }
+  },
+  props: ['contents']
 }
 </script>
 
@@ -36,6 +37,7 @@ export default {
     align-items: stretch;
     background-color: $white;
     box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
 }
 .list-img{
     background-size: cover;
@@ -53,6 +55,7 @@ export default {
     .list-txt{
         margin: 15px 0;
         overflow: hidden;
+        line-height: 1.6;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
@@ -75,10 +78,6 @@ export default {
     }
 }
 .tag-category{
-    margin-left: 20px;
-    color: $white;
-    background-color: $grey-m;
-    border-radius: 100px;
-    padding: 5px 15px;
+     margin-left: 10px;
 }
 </style>
