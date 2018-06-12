@@ -3,13 +3,12 @@
         <div class="list-img" style="background-image:url(https://amp.businessinsider.com/images/5944425a9a7af52c008b4fdb-750-563.jpg)">
         </div>
        <div class="list-content">
-           <pre>{{contents}}</pre>
             <h2>{{contents.Name}}</h2>
             <p class="list-txt">{{contents.Description}}</p>
-            <div class="list-tag">
+            <!-- <div class="list-tag">
                 <p class="bold">Ethan Foster</p>
                 <p class="tag-category">Entertainment</p>
-            </div>
+            </div> -->
             <div class="list-note">
                 <p><i class="el-icon-location"></i>{{contents.Zone}}</p>
                 <p><i class="el-icon-date"></i>{{contents.Opentime}}</p>

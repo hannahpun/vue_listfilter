@@ -7,21 +7,20 @@
     </div>
     <div class="search-header">
       <h2>Showing 15 results by…</h2>
-      <div class="search-category">
+      <!-- <div class="search-category">
         <p class="tag-category">Entertainment</p>
         <p class="tag-category">Entertainment</p>
-      </div>
+      </div> -->
       </div>
       <div class="listWrapper">
-        <!-- {{inputSearchResult}} -->
-        <List v-for="list in listData" :key="list.id" :contents="listData"></List>
+        <List v-for="list in inputSearchResult" :key="list.id" :contents="list"></List>
       </div>
   </div>
 </template>
 modal
 <script>
 import List from '@/components/List'
-// import {_} from 'vue-underscore'
+import {_} from 'vue-underscore'
 export default {
   name: 'Lists',
   data () {
@@ -33,19 +32,20 @@ export default {
   },
   created () {
     const vm = this
-    let api = 'https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97'
+    let api = 'http://www.mocky.io/v2/5b1ff2c0310000bf2d230a8f'
     vm.$http.get(api).then(res => {
-      this.listData = res.data && res.data.result.records
+      this.listData = res.data && res.data
       this.inputSearchResult = this.listData
+      debugger
     }).catch(error => {
       console.log(error)
     })
   },
   watch: {
     inputSearch (txt) {
-      // this.inputSearchResult = _.filter(this.listData, lists => {
-      //   return lists.Name.indexOf(txt) !== -1
-      // })
+      this.inputSearchResult = _.filter(this.listData, lists => {
+        return lists.Name.indexOf(txt) !== -1 || lists.Description.indexOf(txt) !== -1
+      })
     }
   },
   computed: {
