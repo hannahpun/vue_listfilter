@@ -52,7 +52,7 @@ export default {
   width: 100%;
   margin: 0 auto;
   @include desktop(){
-    width: 1000px;
+    width: 1100px;
   }
 }
 .container{

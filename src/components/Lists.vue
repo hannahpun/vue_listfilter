@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="search-header">
-      <h2>Showing 15 results by…</h2>
+    <div class="search-header" v-if="inputSearchTxt != ''">
+      <h2>Showing 15 results by <span class="main-color">{{inputSearchTxt}}</span></h2>
     </div>
     <div class="listWrapper">
       <List v-for="list in inputSearch" :key="list.id" :contents="list"></List>

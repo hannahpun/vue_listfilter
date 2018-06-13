@@ -1,6 +1,6 @@
 <template>
     <div class="list">
-        <div class="list-img" style="background-image:url(https://amp.businessinsider.com/images/5944425a9a7af52c008b4fdb-750-563.jpg)">
+        <div class="list-img" :style="'background-image:url('+ contents.Picture1 + ')'">
         </div>
        <div class="list-content">
             <h2>{{contents.Name}}</h2>

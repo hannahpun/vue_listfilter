@@ -9,7 +9,8 @@ import {_} from 'vue-underscore'
 
 const state = {
   listsData: [],
-  inputSearchTxt: ''
+  inputSearchTxt: '',
+  locateList: []
 }
 
 // getter
@@ -29,6 +30,9 @@ const mutations = {
   },
   SET_SEARCH (state, txt) {
     state.inputSearchTxt = txt
+  },
+  CHECK_LOCATE (state, txt) {
+    state.locateList = txt
   }
 }
 
