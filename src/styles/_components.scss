@@ -8,15 +8,17 @@
 
 // Input
 .input-searchWrapper{
-    color: $purple;
+    color: $white;
 }
 .input-search{
-    color: $purple;
+    color: $white;
     font-size: 20px;
     background-color: transparent;
     border-width: 0;
-    border-bottom: 1px solid $purple;
-    margin-bottom: 20px;
+    border-bottom: 1px solid $white;
     margin-left: -25px;
     padding: 5px 0 5px 30px;
+    &::placeholder { /* Chrome/Opera/Safari */
+        color: rgba(255,255,255,0.50);
+    }
 }

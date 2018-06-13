@@ -37,11 +37,19 @@ export default {
     background-color: $white;
     box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
     margin-bottom: 25px;
+    @include pad(){
+        flex-wrap: wrap;
+    }
 }
 .list-img{
     background-size: cover;
+    background-position: center center;
     width: 220px;
     flex-shrink: 0;
+    @include pad(){
+        width: 100%;
+        height: 200px;
+    }
     img{
         width: 100%;
     }

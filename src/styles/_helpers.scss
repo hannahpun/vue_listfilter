@@ -1,0 +1,21 @@
+// breakpoint
+$desktop: 1280px;
+$pad: 768px;
+
+@mixin desktop() {
+  @media (min-width: $desktop) {
+    @content;
+  }
+} 
+
+@mixin pad() {
+  @media (max-width: $desktop){
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media (max-width: $pad) {
+    @content;
+  }
+}

@@ -7,6 +7,9 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import ElementUI from 'element-ui'
 import underscore from 'vue-underscore'
+
+import store from './store.js'
+
 import './styles/element-variables.scss'
 import './styles/application.scss'
 
@@ -19,6 +22,7 @@ Vue.use(underscore)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
