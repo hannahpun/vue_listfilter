@@ -87,6 +87,7 @@ export default {
   padding: 25px 40px;
   @include mobile(){
     width: 100%;
+    padding: 0;
   }
 }
 </style>

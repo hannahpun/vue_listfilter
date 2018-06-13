@@ -3,8 +3,18 @@
     <div class="search-header" v-if="inputSearchTxt != ''">
       <h2>Showing {{inputSearch.length}} results by <span class="main-color">{{inputSearchTxt}}</span></h2>
     </div>
+    <!-- {{inputSearch.length}} -->
     <div class="listWrapper">
-      <List v-for="list in inputSearch" :key="list.id" :contents="list"></List>
+      <List v-for="list in inputSearch.slice(startNum, endNum)" :key="list.id" :contents="list"></List>
+      <div v-if="inputSearch.length > 5">
+        <el-pagination
+          background
+          layout="prev, pager, next"
+          :total="inputSearch.length"
+          @next-click="clickNext"
+          @current-change="clickNext">
+        </el-pagination>
+      </div>
     </div>
   </div>
 </template>
@@ -18,7 +28,9 @@ export default {
   components: { List },
   data () {
     return {
-      inputSearchResult: []
+      inputSearchResult: [],
+      startNum: 0,
+      endNum: 5
     }
   },
   created () {
@@ -38,6 +50,10 @@ export default {
     }
   },
   methods: {
+    clickNext (page) {
+      this.startNum = page * 5 - 5
+      this.endNum = page * 5
+    }
   }
 }
 </script>
@@ -55,5 +71,8 @@ export default {
   color: $purple;
   background-color: transparent;
   margin-right: 10px;
+}
+.el-pagination{
+  text-align: right;
 }
 </style>
