@@ -6,7 +6,6 @@
         <input class="form-check-input" type="checkbox" :value="item" v-model="checkedLocate">
         {{item}}
       </label>
-      locateList: {{locateList}}
     </div>
   </div>
 </template>

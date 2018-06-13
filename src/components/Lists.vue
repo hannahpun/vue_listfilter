@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="search-header" v-if="inputSearchTxt != ''">
-      <h2>Showing 15 results by <span class="main-color">{{inputSearchTxt}}</span></h2>
+      <h2>Showing {{inputSearch.length}} results by <span class="main-color">{{inputSearchTxt}}</span></h2>
     </div>
     <div class="listWrapper">
       <List v-for="list in inputSearch" :key="list.id" :contents="list"></List>
@@ -25,12 +25,16 @@ export default {
   },
   computed: {
     ...mapState([
-      'listsData', 'inputSearchTxt'
+      'listsData', 'inputSearchTxt', 'locateList'
     ]),
     inputSearch () {
-      return _.filter(this.listsData, lists => {
-        return lists.Name.indexOf(this.inputSearchTxt) !== -1 || lists.Description.indexOf(this.inputSearchTxt) !== -1
-      })
+      if (this.locateList.length === 0 && this.inputSearchTxt.length < 1) {
+        return this.listsData
+      } else {
+        return _.filter(this.listsData, lists => {
+          return _.contains(this.locateList, lists.Zone) && (lists.Name.indexOf(this.inputSearchTxt) !== -1 || lists.Description.indexOf(this.inputSearchTxt) !== -1)
+        })
+      }
     }
   },
   methods: {
