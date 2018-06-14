@@ -44,6 +44,9 @@ h2{
   label{
     width: 50%;
     margin-bottom: 10px;
+    @include mobile(){
+      width: 33.3%;
+    }
   }
 }
 </style>

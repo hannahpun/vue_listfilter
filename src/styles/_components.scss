@@ -9,8 +9,14 @@
 // Input
 .input-searchWrapper{
     color: $white;
+    @include mobile(){
+        display: flex;
+        align-items: center;
+        margin: 10px auto 0 auto;
+    }
 }
 .input-search{
+    margin: 0 auto;
     min-width: 300px;
     color: $white;
     font-size: 20px;
@@ -21,6 +27,9 @@
     padding: 5px 0 5px 30px;
     &::placeholder { /* Chrome/Opera/Safari */
         color: rgba(255,255,255,0.50);
+    }
+    @include mobile(){
+        margin: 0 auto 0 -25px;
     }
 }
 

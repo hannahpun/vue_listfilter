@@ -68,9 +68,16 @@ export default {
     align-items: center;
     padding: 25px 40px;
     box-sizing: border-box;
+    @include mobile(){
+      flex-wrap: wrap;
+    }
   }
   .img{
     width: 30%;
+    @include mobile(){
+      margin: 0 auto;
+      width: auto;
+    }
   }
 }
 
