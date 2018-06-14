@@ -44,7 +44,13 @@ export default {
         return this.listsData
       } else {
         return _.filter(this.listsData, lists => {
-          return _.contains(this.locateList, lists.Zone) && (lists.Name.indexOf(this.inputSearchTxt) !== -1 || lists.Description.indexOf(this.inputSearchTxt) !== -1)
+          if (this.inputSearchTxt.length >= 1 && this.locateList.length === 0) {
+            return (lists.Name.indexOf(this.inputSearchTxt) !== -1 || lists.Description.indexOf(this.inputSearchTxt) !== -1)
+          } else if (this.locateList.length !== 0 && this.inputSearchTxt.length < 1) {
+            return _.contains(this.locateList, lists.Zone)
+          } else {
+            return _.contains(this.locateList, lists.Zone) && (lists.Name.indexOf(this.inputSearchTxt) !== -1 || lists.Description.indexOf(this.inputSearchTxt) !== -1)
+          }
         })
       }
     }
