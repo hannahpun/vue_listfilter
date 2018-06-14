@@ -50,7 +50,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/vue_listfilte/',
+    assetsPublicPath: '/vue_listfilter/',
 
     /**
      * Source Maps
