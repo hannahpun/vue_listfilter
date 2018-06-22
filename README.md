@@ -1,6 +1,8 @@
-# vue-listfilter
+# What is it?
 
-> A Vue.js project
+> Filter practice project based on Vue.js
+
+![Image](http://www.hannahpun.me/vue_listfilter/stage2.png)
 
 ## Build Setup
 
